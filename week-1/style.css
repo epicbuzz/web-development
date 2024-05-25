@@ -1,0 +1,46 @@
+h2 {
+color: red;
+border: 2px solid black;
+}
+
+
+
+#heading1{
+  color: blue;
+  font-size: 140px;
+}
+
+.heading{
+  color: green;
+  font-size: 10px;
+}
+
+.second{
+  border: 5px dotted red;
+}
+
+.is{
+  border: 12px solid red;
+}
+
+div{
+  color: red;
+}
+
+div div{
+  color: blue;
+}
+
+#uniq + div{
+  color: aqua
+}
+
+[id=uniq]{
+  background-color: aqua;
+}
+
+
+
+[class=a]{
+  background-color: aqua;
+}

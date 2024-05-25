@@ -1,11 +1,11 @@
 ### CSS
-- [ ] What is CSS?
-- [ ] Inline, Internal, and External CSS
-- [ ] CSS Selectors (Element, Class, ID)
-- [ ] Basic Styling (Colors, Fonts, Text Properties)
+- [x] What is CSS?
+- [x] Inline, Internal, and External CSS
+- [x] CSS Selectors (Element, Class, ID)
+- [x] Basic Styling (Colors, Fonts, Text Properties)
 
 ### HTML
-- [ ] What is HTML?
-- [ ] Basic Structure of an HTML Document
-- [ ] HTML Tags and Elements
-- [ ] HTML Document Structure (DOCTYPE, <html>, <head>, <body>)
+- [x] What is HTML?
+- [x] Basic Structure of an HTML Document
+- [x] HTML Tags and Elements
+- [x] HTML Document Structure (DOCTYPE, <html>, <head>, <body>)
