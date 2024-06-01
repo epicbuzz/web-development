@@ -1,0 +1,16 @@
+Week 3:
+Css
+Responsive Design Basics
+Media Queries
+...
+Fluid Layouts vs. Fixed Layouts
+Mobile-first Design Principles
+..
+
+HTML
+Links (<a> element)
+Images (<img> element)
+Semantic HTML ( <header>, <nav>, <section>, <article>, <footer>)
+
+Form Structure (<form> element)
+Common Input Elements (<input>, <textarea>, <select>, <button>)
