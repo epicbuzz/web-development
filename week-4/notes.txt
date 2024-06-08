@@ -1,0 +1,17 @@
+https://fontawesome.com/v6/search?q=book&o=r
+
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts_of_flexbox
+
+
+
+
+https://www.w3schools.com/css/css3_flexbox.asp
+
+https://penpot.app/design/layout
+
+
+https://www.reddit.com/r/webdev/comments/usln38/a_visual_reference_of_css_flexbox/
+

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>
+    Layout using floats
+  </title>
+    <style>
+        .container {
+            width: 100%;
+            border: 1px solid #ccc;
+        }
+        .header, .footer {
+            background-color: #f1f1f1;
+            text-align: center;
+            padding: 10px;
+        }
+        .sidebar {
+            float: left;
+            width: 25%;
+            background-color: #f9f9f9;
+            padding: 10px;
+        }
+        .content {
+            float: left;
+            width: 75%;
+            padding: 10px;
+        }
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>Header</h1>
+    </div>
+    
+    <div class="clearfix">
+        <div class="sidebar">
+            <h2>Sidebar</h2>
+            <p>Some text..</p>
+        </div>
+        
+        <div class="content">
+            <h2>Main Content</h2>
+            <p>Some more text..</p>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <h2>Footer</h2>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Justify content</title>
+    <style>
+        .container {
+            display: flex;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+        .justify-between{
+          justify-content: space-between; /* Can be flex-start, flex-end, center, space-between, space-around, space-evenly */
+        }
+        .justify-start{
+          justify-content: flex-start;
+        }
+        .justify-end{
+          justify-content: flex-end;
+        }
+
+        .justify-center{
+          justify-content: center;
+        }
+        .box {
+            background-color: lightcoral;
+            border: 1px solid #333;
+            padding: 20px;
+            margin: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h2>Justify Content</h2>
+<p>The justify-content property aligns flex items along the main axis.</p>
+
+<h2>Justify content between</h2>
+<div class="container justify-between">
+    <div class="box">Box 1</div>
+    <div class="box">Box 2</div>
+    <div class="box">Box 3</div>
+</div>
+
+<h2>Justify content start</h2>
+<div class="container justify-start">
+  <div class="box">Box 1</div>
+  <div class="box">Box 2</div>
+  <div class="box">Box 3</div>
+</div>
+
+<h2>Justify content end</h2>
+<div class="container justify-end">
+  <div class="box">Box 1</div>
+  <div class="box">Box 2</div>
+  <div class="box">Box 3</div>
+</div>
+
+<h2>Justify content center</h2>
+<div class="container justify-center">
+  <div class="box">Box 1</div>
+  <div class="box">Box 2</div>
+  <div class="box">Box 3</div>
+</div>
+</body>
+</html>

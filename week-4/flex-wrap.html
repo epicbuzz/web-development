@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .container {
+            display: flex;
+            border: 1px solid #ccc;
+            padding: 10px;
+            overflow: scroll;
+        }
+        .wrap{
+          height: 20px;
+          flex-wrap: wrap; /* Can be nowrap, wrap, wrap-reverse */
+        }
+        .nowrap{
+          flex-wrap: nowrap;
+        }
+        .box {
+            background-color: lightpink;
+            border: 1px solid #333;
+            padding: 20px;
+            margin: 5px;
+            text-align: center;
+            flex: 1 1 200px; /* Flex-grow, flex-shrink, flex-basis */
+        }
+    </style>
+</head>
+<body>
+
+  <h2>Flex Wrap</h2>
+<p>The flex-wrap property allows flex items to wrap onto multiple lines.</p>
+
+
+<h2>Flex wrap</h2>
+<div class="container wrap">
+    <div class="box">Box 1</div>
+    <div class="box">Box 2</div>
+    <div class="box">Box 3</div>
+    <div class="box">Box 4</div>
+    <div class="box">Box 5</div>
+    <div class="box">Box 5</div>
+    <div class="box">Box 5</div>
+    <div class="box">Box 5</div>
+    <div class="box">Box 5</div>
+    <div class="box">Box 5</div>
+
+</div>
+
+
+<h2>Flex no wrap</h2>
+<div class="container nowrap">
+    <div class="box">Box 1</div>
+    <div class="box">Box 2</div>
+    <div class="box">Box 3</div>
+    <div class="box">Box 4</div>
+    <div class="box">Box 5</div>
+    <div class="box">Box 5</div>
+    <div class="box">Box 5</div>
+    <div class="box">Box 5</div>
+    <div class="box">Box 5</div>
+    <div class="box">Box 5</div>
+    <div class="box">Box 5</div>
+    <div class="box">Box 5</div>
+    <div class="box">Box 5</div>
+    <div class="box">Box 5</div>
+    <div class="box">Box 5</div>
+    <div class="box">Box 5</div>
+    <div class="box">Box 5</div>
+    <div class="box">Box 5</div>
+    <div class="box">Box 5</div>
+    <div class="box">Box 5</div>
+    <div class="box">Box 5</div>
+    <div class="box">Box 5</div>
+    <div class="box">Box 5</div>
+    <div class="box">Box 5</div>
+    <div class="box">Box 5</div>
+    <div class="box">Box 5</div>
+    <div class="box">Box 5</div>
+    <div class="box">Box 5</div>
+    <div class="box">Box 5</div>
+    <div class="box">Box 5</div>
+    <div class="box">Box 5</div>
+
+</div>
+</body>
+</html>

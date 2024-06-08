@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Flex direction</title>
+    <style>
+        .container {
+            display: flex;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+
+        .col{
+          flex-direction: column; /* Can be row, column, row-reverse, column-reverse */
+        }
+
+        .row{
+          flex-direction: row; /* Can be row, column, row-reverse, column-reverse */
+        }
+
+        .row-reverse{
+          flex-direction: row-reverse;
+        }
+
+        .box {
+            background-color: lightgreen;
+            border: 1px solid #333;
+            padding: 20px;
+            margin: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+  <h2>Flex direction</h2>
+  <p>The flex-direction property defines the direction in which the container's children (flex items) are placed.
+  </p>
+
+  <h2>Column direction</h2>
+<div class="container col">
+    <div class="box">Box 1</div>
+    <div class="box">Box 2</div>
+    <div class="box">Box 3</div>
+</div>
+
+<h2>Row direction</h2>
+<div class="container row">
+  <div class="box">Box 1</div>
+  <div class="box">Box 2</div>
+  <div class="box">Box 3</div>
+</div>
+
+<h2>Row reverse</h2>
+<div class="container row-reverse">
+  <div class="box">Box 1</div>
+  <div class="box">Box 2</div>
+  <div class="box">Box 3</div>
+</div>
+</body>
+</html>

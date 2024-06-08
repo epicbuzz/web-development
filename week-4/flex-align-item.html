@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .container {
+            display: flex;
+            height: 200px;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+        .align-center{
+          align-items: center; /* Can be flex-start, flex-end, center, baseline, stretch */
+        }
+
+        .align-start{
+          align-items: flex-start; /* Can be flex-start, flex-end, center, baseline, stretch */
+        }
+
+        .align-end{
+          align-items: flex-end; /* Can be flex-start, flex-end, center, baseline, stretch */
+        }
+
+        .box {
+            background-color: lightyellow;
+            border: 1px solid #333;
+            padding: 20px;
+            margin: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h2>Align item</h2>
+<p>The align-items property aligns flex items along the cross axis.</p>
+
+<h2>Align item center</h2>
+<div class="container align-center">
+    <div class="box">Box 1</div>
+    <div class="box">Box 2</div>
+    <div class="box">Box 3</div>
+</div>
+
+
+<h2>Align item start</h2>
+<div class="container align-start">
+    <div class="box">Box 1</div>
+    <div class="box">Box 2</div>
+    <div class="box">Box 3</div>
+</div>
+
+<h2>Align item end</h2>
+<div class="container align-end">
+    <div class="box">Box 1</div>
+    <div class="box">Box 2</div>
+    <div class="box">Box 3</div>
+</div>
+</body>
+</html>
