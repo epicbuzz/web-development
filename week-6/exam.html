@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exam Page</title>
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  flex-direction: column;
+}
+
+.flex{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.container {
+  margin-top: 20px;
+}
+
+.choices div{
+  margin: 10px 0;
+}
+.question{
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.question-container {
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+}
+
+.countdown, .global-timer {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin: 20px 0;
+}
+
+button {
+  font-size: 16px;
+  padding: 10px 20px;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+  </style>
+</head>
+<body>
+  <div class="global-timer" id="globalTimer">Total Time: 00:00</div>
+  <h1>Exam</h1>
+  <p>Answer the following questions within 2 minutes.</p>
+  <div class="container">
+    <div class="question-container" id="questionContainer">
+    </div>
+
+    <div class="flex">
+      <button onclick="nextQuestion()">Next Question</button>
+      <div class="countdown" id="countdown">02:00</div>
+    </div>
+  </div>
+
+
+  <script>
+    const questions = [
+  {
+    question: "What does CSS stand for?",
+    choices: [
+      "Cascading Style Sheets",
+      "Creative Style Sheets",
+      "Computer Style Sheets",
+      "Colorful Style Sheets"
+    ],
+    correctAnswer: 0
+  },
+  {
+    question: "Which HTML attribute is used to define inline styles?",
+    choices: [
+      "font",
+      "styles",
+      "style",
+      "class"
+    ],
+    correctAnswer: 2
+  },
+  {
+    question: "Which CSS property is used to change the text color of an element?",
+    choices: [
+      "fgcolor",
+      "text-color",
+      "color",
+      "font-color"
+    ],
+    correctAnswer: 2
+  }
+];
+
+
+let currentQuestionIndex = 0;
+let countdownTimer;
+let globalTimer;
+let totalTime = 0;
+let countdownTime = 120;
+
+function startGlobalTimer() {
+  globalTimer = setInterval(() => {
+    totalTime++;
+    updateGlobalTimer();
+  }, 1000);
+}
+
+function updateGlobalTimer() {
+  const minutes = Math.floor(totalTime / 60);
+  const seconds = totalTime % 60;
+  document.getElementById('globalTimer').textContent = `Total Time: ${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+}
+
+function startCountdown() {
+  countdownTime = 120;
+  countdownTimer = setInterval(() => {
+    if (countdownTime > 0) {
+      countdownTime--;
+      updateCountdown();
+    } else {
+      nextQuestion();
+    }
+  }, 1000);
+}
+
+function updateCountdown() {
+  const minutes = Math.floor(countdownTime / 60);
+  const seconds = countdownTime % 60;
+  document.getElementById('countdown').textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+}
+
+function loadQuestion() {
+  if (currentQuestionIndex >= questions.length) {
+    clearInterval(globalTimer);
+    clearInterval(countdownTimer);
+    alert("Exam completed!");
+    return;
+  }
+
+  const questionData = questions[currentQuestionIndex];
+  const questionContainer = document.getElementById('questionContainer');
+  questionContainer.innerHTML = `
+    <div class="question">${questionData.question}</div>
+    <div class="choices">
+      ${questionData.choices.map((choice, index) => `
+        <div>
+          <input type="radio" name="choice" id="choice${index}" value="${index}">
+          <label for="choice${index}">${choice}</label>
+        </div>
+      `).join('')}
+    </div>
+  `;
+}
+
+function nextQuestion() {
+  clearInterval(countdownTimer);
+  currentQuestionIndex++;
+  loadQuestion();
+  startCountdown();
+}
+
+function initializeExam() {
+  startGlobalTimer();
+  loadQuestion();
+  startCountdown();
+}
+
+document.addEventListener('DOMContentLoaded', initializeExam);
+
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Countdown Timer</title>
+    <style>
+      body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+}
+
+.countdown {
+  font-size: 48px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+button {
+  font-size: 16px;
+  padding: 10px 20px;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+    </style>
+</head>
+<body>
+  <div class="container">
+    <div id="countdown" class="countdown">
+      <span id="minutes">00</span>:<span id="seconds">00</span>
+    </div>
+    <button onclick="startCountdown()">Start 5-Minute Countdown</button>
+  </div>
+
+<script>
+  function startCountdown() {
+  let minutes = 5;
+  let seconds = minutes * 60;
+  const countdownElement = document.querySelector('#countdown');
+  const minutesElement = document.querySelector('#minutes');
+  const secondsElement = document.querySelector('#seconds');
+
+  const interval = setInterval(() => {
+    const mins = Math.floor(seconds / 60);
+    const secs = seconds % 60;
+
+    minutesElement.textContent = String(mins).padStart(2, '0');
+    secondsElement.textContent = String(secs).padStart(2, '0');
+
+    if (seconds > 0) {
+      seconds--;
+    } else {
+      clearInterval(interval);
+      alert("Time's up!");
+    }
+  }, 1000);
+}
+
+</script>
+</body>
+</html>

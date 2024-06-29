@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Javascript basics</title>
+
+
+
+
+  <script>
+    function saySalam() {
+      alert("Salam!");
+    }
+
+
+    function takeName(){
+      var name = prompt("What is your name?");
+      alert(name);
+    }
+
+
+
+
+
+
+    function greetUser() {
+      // Display a confirm dialog
+      let userConfirmed = confirm("Do you want to enter your name?");
+      
+      // Check if the user clicked "OK"
+      if (userConfirmed) {
+        // Display a prompt dialog to get the user's name
+        let userName = prompt("Please enter your name:", "Guest");
+
+        // Check if the user entered a name
+        if (userName !== null && userName !== "") {
+          alert(`Hello, ${userName}!`);
+        } else {
+          alert("Hello, Guest!");
+        }
+      } else {
+        alert("You chose not to enter your name.");
+      }
+    }
+
+    function displayDate() {
+      document.querySelector(".date").textContent = Date()
+
+      setInterval(() => {
+        document.querySelector(".date").textContent = Date()
+      }, 1000);
+    }
+
+    function countdown(){
+      let count = 10;
+      let timer = setInterval(() => {
+        console.log(count);
+        count--;
+        if(count < 0){
+          clearInterval(timer);
+        }
+      }, 1000);
+    }
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Week 6</h1>
+
+    <h1>Introduction to JavaScript</h1>
+<p>
+  JavaScript is a versatile, high-level programming language primarily used for creating and controlling dynamic website content. It enables developers to enhance HTML pages with interactive elements.
+</p>
+
+<div>
+  <h2>Key Features of JavaScript
+  </h2>
+  <ul>
+    <li>Client-Side Scripting: Runs in the browser, interacting directly with the user interface.
+    </li>
+
+    <li>Dynamic Typing: No need to declare variable types.
+    </li>
+
+    <li>Event-Driven Programming: JavaScript can handle events like user inputs and actions.
+    </li>
+  </ul>
+
+  <p>today date is <span class="date"></span></p>
+  <button onclick="saySalam()">Salam</button>
+  <button onclick='confirm("Are you sure?")'>Confirm</button>
+  <button onclick="greetUser()">Greet</button>
+  <button onclick="displayDate()">Today's date</button>
+</div>
+
+
+
+
+</body>
+</html>
