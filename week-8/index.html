@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conditions and operators</title>
+</head>
+<pre>
+  <h2>
+    Javacript conditions and operators
+  </h2>
+
+  <p>
+    JavaScript conditions are used to perform different actions based on different conditions. In this example, we use if and else statements to perform different actions based on different conditions.
+  </p>
+
+
+
+  <h3>Example 1</h3>
+  <p>
+    In this example, we use if and else statements to perform different actions based on different conditions.
+    </p>
+<pre>
+    <code>
+    let marks = 30;
+
+    if (marks >= 33) {
+      document.write("You have passed the exam");
+    } else {
+      document.write("You have failed the exam");
+    }
+
+
+    marks = 85;
+
+    if (marks >= 80) {
+      document.write("You have passed the exam with A+ grade");
+    } else if (marks >= 60) {
+      document.write("You have passed the exam with first B ");
+    } else if (marks >= 45) {
+      document.write("You have passed the exam with second C");
+    } else if (marks >= 33) {
+      document.write("You have passed the exam with third E");
+    } else {
+      document.write("You have failed the exam");
+    }
+
+    switch(trnslation_type){
+      case 'debit':
+        document.write("do debit transaction");
+        break;
+      case 'credit':
+      document.write("do credit transaction");
+      break;
+      default:
+        document.write("invalid transaction type");
+    }
+  </code>
+</pre>
+
+<h2>Operators</h2>
+<ul>
+  <li>Arithmetic operators</li>
+  <li>Assignment operators</li>
+  <li>Comparison operators</li>
+  <li>Logical operators</li>
+  <li>Conditional (ternary) operator</li>
+  <li>Bitwise operators</li>
+</ul>
+
+<h2>Arithmetic operators</h2>
+<p>Arithmetic operators are used to perform arithmetic operations on numbers.</p>
+<p>
+  <ul>
+    <li>+</li>
+    <li>-</li>
+    <li>*</li>
+    <li>/</li>
+    <li>%</li>
+    <li>++</li>
+    <li>--</li>
+  </ul>
+</p>
+
+<script>
+  // +
+  let x = 5;
+  let y = 40;
+
+  let z = x + y;
+
+  document.write(`Addition: ${x} + ${y} = ${x+y} <br>`);
+  document.write(`Sub: ${x} - ${y} = ${x-y} <br>`);
+  document.write(`Div: ${x} / ${y} = ${x/y} <br>`);
+  document.write(`Mul: ${x} * ${y} = ${x*y} <br>`);
+  document.write(`Mul: ${x} % ${y} = ${7%2} <br>`);
+  document.write(`Post Icre: ${x} ++  = ${x++} `);
+  document.write(`-> ${x} <br>`);
+  document.write(`Pre Icre: ++${x}   = ${++x} <br>`);
+
+
+  document.write(`Post Decrement: ${x} --  = ${x--} `);
+  document.write(`-> ${x} <br>`);
+  document.write(`Pre Decrement: --${x}   = ${--x} <br>`);
+
+
+</script>
+
+<h2>Assignment operators</h2>
+<p>Assignment operators are used to assign values to variables.</p>
+
+<p>
+  <ul>
+    <li>=</li>
+    <li>+=</li>
+    <li>-=</li>
+    <li>*=</li>
+    <li>/=</li>
+    <li>%=</li>
+  </ul>
+</p>
+
+<script>
+  a = 5;
+  a = 10;
+
+  a += 5; // a = a + 5
+  document.write(`a += 5: ${a} <br>`);
+
+</script>
+
+<h2>Comparison operators</h2>
+<p>Comparison operators are used to compare two values.</p>
+<p>
+  <ul>
+    <li>==</li>
+    <li>===</li>
+    <li>!=</li>
+    <li>!==</li>
+    <li>></li>
+    <li>&lt;</li>
+    <li>&gt;=</li>
+    <li>&lt;=</li>
+  </ul>
+  </p>
+
+  <script>
+    a = 10;
+    b = 15;
+
+    if(a > b){
+      document.write(`${a} is greater than ${b} <br>`);
+    } else {
+      document.write(`${a} is less than ${b} <br>`);
+    }
+
+    if(a < b){
+      document.write(`${a} is less than ${b} <br>`);
+    } else {
+      document.write(`${a} is greater than ${b} <br>`);
+    }
+
+
+    if(a == b){
+      document.write(`${a} is equal to ${b} <br>`);
+    } else {
+      document.write(`${a} is not equal to ${b} <br>`);
+    }
+
+    if(a === b){
+      document.write(`${a} is equal to ${b} <br>`);
+    } else {
+      document.write(`${a} is not equal to ${b} <br>`);
+    }
+
+
+    if('1' == 1){
+      document.write(`string is same as number? <br>`);
+      }
+
+    if('1' === 1){
+      document.write(`string is same as number? <br>`);
+    } else {
+      document.write(`string is not same as number !!!!! <br>`);
+    }
+
+    if('1' !== 1){
+      document.write(`1 !== 1 true <br>`);
+    } else {
+      document.write(`1 != 1 false <br>`);
+    }
+  </script>
+
+  <h2>Logical operators</h2>
+  <p>Logical operators are used to determine the logic between variables or values.</p>
+  <p>
+    <ul>
+      <li>&&</li>
+      <li>||</li>
+      <li>!</li>
+    </ul>
+</p>
+
+<script>
+  a =51;
+
+  if(a > 30 || a < 50){
+    document.write(`${a} is between 30 and 50 THE FIRST CHECK <br>`);
+  } else if(a > 50 && a < 70){
+    document.write(`${a} is greater than 50 or less than 30 second check <br>`);
+  }
+</script>
+
+
+true AND true => true
+true AND false => false
+false AND true => false
+false AND false => false
+
+true OR true => true
+true OR false => true
+false OR true => true
+false OR false => false
+
+!true
+!false
+
+
+
+condtion ? true : false
+
+<script>
+  a = 10;
+  b = 5;
+
+  let result = a > b ? 'a is greater than b' : 'a is less than b';
+  document.write(result);
+</script>
+</body>
+</html>

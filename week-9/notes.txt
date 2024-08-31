@@ -1,0 +1,202 @@
+let abc = 'fsdfdsf dsfds fjkhsdbfhjds f'
+
+
+abc = 'fff'
+
+a = 5
+
+a += 5 + 6 
+
+a = a + 2 
+
+
+AAA_a444b_444
+
+
+is even
+
+
+is_even
+
+isEven 
+
+
+
+a = "5" 
+b = 5 
+
+a == b   a === b 
+
+
+a > b 
+a >= b 
+a <= 
+
+a = 6 
+b = 8 
+
+
+isAEven = a % 2 == 0
+isBEven = b % 2 == 0
+
+
+
+isAEven && isBEven   false && true ==> true 
+
+isAEven || isBEven
+ 
+ !true => false 
+ !false  => true 
+
+ a = 4 
+
+
+marks = 50 
+
+
+if(true){
+	
+}
+
+
+if(true)  {
+	block
+
+} else {
+	
+
+}
+
+if(marks >= 33){
+	console.log("passed")
+} else {
+		console.log("failed")
+
+}
+
+
+
+
+if(marks >= 33){
+	console.log("passed")
+} 
+
+if(marks < 33) {
+		console.log("failed")
+
+}
+
+
+marks = 60 
+
+else - if 
+
+if(marks >= 90)
+	console.log("a+")
+else if (marks >= 80)
+	console.log("a")
+else if (marks >= 70)
+	console.log("b")
+else if (marks >= 50)
+	console.log("c")
+else
+	console.log("f")
+
+
+op = "widthdraw"
+
+500 
+400 
+
+switch(grade){
+	case "a":
+	 gfgf
+	case: 'b'
+	case: 'c'	     
+}
+
+
+
+
+
+loops
+
+for(initialization;   conditions; inc/dec){
+	
+}
+
+console.log("Pakistan is bad")
+console.log("Pakistan is good")
+console.log("Pakistan is good")
+console.log("Pakistan is good")
+console.log("Pakistan is good")
+
+a = 0
+a ++  => 1 
+1 ++ => 2 
+
+
+for(i=0;i<2;i++){
+	console.log("Pakistan is good");
+
+	if(i > 2)
+	  break;
+
+	i ++;
+}
+
+i = 0 
+i=1,2
+
+
+do {
+	
+}while(condition)
+
+
+
+function calculate(num1, num2, op){ 
+  if( op == "+")
+    return 	 num1 + num2;
+
+  if( op == "-")
+    return 	 num1 - num2;
+     
+if( op == "*")
+    return 	 num1 * num2;
+    
+
+if( op == "/")
+    return 	 num1 / num2;
+    
+}
+
+calculate(2, 3, "-")
+
+
+
+const calculate = (a,b) => {
+	
+}
+
+
+calculate()
+
+
+button = document.querySelector("#btn")
+
+clicked = () => {
+}
+
+button.addEventListener("click", clicked)
+
+
+let add = (a, b) => a + b;
+
+
+let add = (a, b) => {
+  return a + b;	
+};
+
+
+add(4,5)

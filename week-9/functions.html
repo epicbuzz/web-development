@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Functions - Lecture Notes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        h1 {
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 10px;
+        }
+        h2 {
+            margin-top: 30px;
+        }
+        pre {
+            background-color: #ecf0f1;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+            background-color: #ecf0f1;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        .note {
+            background-color: #dff9fb;
+            padding: 10px;
+            border-left: 4px solid #22a6b3;
+            margin-bottom: 20px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript Functions - Lecture Notes</h1>
+
+    <section>
+        <h2>1. Introduction to Functions</h2>
+        <p><strong>Definition:</strong> A function is a block of reusable code that performs a specific task.</p>
+        <p><strong>Purpose:</strong> Functions help make your code modular, organized, and easier to maintain.</p>
+        <p><strong>Syntax:</strong></p>
+        <pre><code>function functionName(parameters) {
+    // code to be executed
+}</code></pre>
+    </section>
+
+    <section>
+        <h2>2. Why Use Functions?</h2>
+        <ul>
+            <li><strong>Reusability:</strong> Write a piece of code once and use it multiple times.</li>
+            <li><strong>Modularity:</strong> Break your code into manageable chunks.</li>
+            <li><strong>Readability:</strong> Improves the structure and readability of the code.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>3. Function Declaration</h2>
+        <p><strong>Basic Syntax:</strong></p>
+        <pre><code>function greet() {
+    console.log("Hello, World!");
+}</code></pre>
+        <p><strong>Invocation:</strong> Call a function using its name followed by parentheses.</p>
+        <pre><code>greet();  // Outputs: Hello, World!</code></pre>
+    </section>
+
+    <section>
+        <h2>4. Function Parameters and Arguments</h2>
+        <p><strong>Parameters:</strong> Variables listed as part of the function definition.</p>
+        <p><strong>Arguments:</strong> Values passed to the function when it is called.</p>
+        <p><strong>Example:</strong></p>
+        <pre><code>function greet(name) {
+    console.log("Hello, " + name + "!");
+}
+greet("Alice");  // Outputs: Hello, Alice!</code></pre>
+    </section>
+
+    <section>
+        <h2>5. Return Statement</h2>
+        <p><strong>Purpose:</strong> Returns a value from the function and stops the execution of the function.</p>
+        <p><strong>Syntax:</strong></p>
+        <pre><code>function add(a, b) {
+    return a + b;
+}
+let result = add(5, 3);  // result is 8</code></pre>
+        <p><strong>Important:</strong> Without a return statement, a function returns <code>undefined</code>.</p>
+    </section>
+
+    <section>
+        <h2>6. Function Expressions</h2>
+        <p><strong>Definition:</strong> A function can also be defined as an expression and stored in a variable.</p>
+        <p><strong>Syntax:</strong></p>
+        <pre><code>let sum = function(a, b) {
+    return a + b;
+};
+console.log(sum(5, 3));  // Outputs: 8</code></pre>
+        <p><strong>Anonymous Functions:</strong> Functions without a name.</p>
+        <p><strong>Use Cases:</strong> Function expressions are useful for passing functions as arguments or using them as callbacks.</p>
+    </section>
+
+    <section>
+        <h2>7. Arrow Functions</h2>
+        <p><strong>Modern Syntax:</strong> A concise way to write functions introduced in ES6.</p>
+        <p><strong>Syntax:</strong></p>
+        <pre><code>let add = (a, b) => a + b;
+console.log(add(5, 3));  // Outputs: 8</code></pre>
+        <p><strong>Benefits:</strong> Shorter syntax, especially useful for one-liners. Arrow functions also handle the <code>this</code> context differently, which can be useful in certain situations.</p>
+    </section>
+
+    <section>
+        <h2>8. IIFE (Immediately Invoked Function Expressions)</h2>
+        <p><strong>Definition:</strong> A function that is executed right after it is defined.</p>
+        <p><strong>Syntax:</strong></p>
+        <pre><code>(function() {
+    console.log("This function runs immediately!");
+})();</code></pre>
+        <p><strong>Use Cases:</strong> Useful for creating a private scope to avoid polluting the global namespace.</p>
+    </section>
+
+    <section>
+        <h2>9. Higher-Order Functions</h2>
+        <p><strong>Definition:</strong> A function that takes another function as an argument or returns a function.</p>
+        <p><strong>Example:</strong></p>
+        <pre><code>function multiplyBy(factor) {
+    return function(x) {
+        return x * factor;
+    };
+}
+let double = multiplyBy(2);
+console.log(double(5));  // Outputs: 10</code></pre>
+        <p><strong>Use Cases:</strong> Common in functional programming, for tasks like mapping, filtering, and reducing arrays.</p>
+    </section>
+
+    <section>
+        <h2>10. Callback Functions</h2>
+        <p><strong>Definition:</strong> A function passed as an argument to another function and executed inside that function.</p>
+        <p><strong>Example:</strong></p>
+        <pre><code>function greet(name, callback) {
+    console.log("Hello, " + name);
+    callback();
+}
+function afterGreeting() {
+    console.log("Welcome to the platform!");
+}
+greet("Alice", afterGreeting);
+// Outputs:
+// Hello, Alice
+// Welcome to the platform!</code></pre>
+    </section>
+
+    <section>
+        <h2>11. Closures</h2>
+        <p><strong>Definition:</strong> A closure is a function that remembers its lexical scope even when the function is executed outside that scope.</p>
+        <p><strong>Example:</strong></p>
+        <pre><code>function outerFunction() {
+    let outerVariable = "I'm outside!";
+    return function innerFunction() {
+        console.log(outerVariable);
+    };
+}
+let myFunction = outerFunction();
+myFunction();  // Outputs: I'm outside!</code></pre>
+        <p><strong>Use Cases:</strong> Closures are useful for data encapsulation and creating private variables.</p>
+    </section>
+
+    <section>
+        <h2>12. Default Parameters</h2>
+        <p><strong>Definition:</strong> Assign default values to function parameters if no argument is provided.</p>
+        <p><strong>Syntax:</strong></p>
+        <pre><code>function greet(name = "Guest") {
+    console.log("Hello, " + name + "!");
+}
+greet();  // Outputs: Hello, Guest!</code></pre>
+    </section>
+
+    <section>
+        <h2>13. Rest Parameters</h2>
+        <p><strong>Definition:</strong> Collect all remaining parameters into an array.</p>
+        <p><strong>Syntax:</strong></p>
+        <pre><code>function sum(...numbers) {
+    return numbers.reduce((total, num) => total + num, 0);
+}
+console.log(sum(1, 2, 3, 4));  // Outputs: 10</code></pre>
+    </section>
+
+    <section>
+        <h2>14. Function Scope and Hoisting</h2>
+        <p><strong>Function Scope:</strong> Functions have access to their own scope, the outer scope (closure), and the global scope.</p>
+        <p><strong>Hoisting:</strong> Function declarations are hoisted to the top of their scope, meaning they can be called before they are defined in the code.</p>
+        <p><strong>Example of Hoisting:</strong></p>
+        <pre><code>console.log(add(2, 3));  // Outputs: 5
+function add(a, b) {
+    return a + b;
+}</code></pre>
+    </section>
+
+</body>
+</html>

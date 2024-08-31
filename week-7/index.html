@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Javacript variables</title>
+</head>
+
+<body>
+  <script>
+    // Variables are containers for storing data values.
+    // In this example, x, y, and z are variables.
+
+    if(true){
+    var x = 5;
+    document.write(x);
+    document.write("<br>");
+
+
+    var y = 6;
+    var z = x + y;
+
+    var x = 12;
+
+    document.write(x);
+
+    let abx = "hello";
+    document.write(abx);
+    }
+
+    let abx = "world";
+
+    const abc = "hello";
+    document.write(abc);
+    document.write("<br>");
+
+   let string = 12;
+   document.write(string);
+
+   document.write("<br>");
+
+   let num =  12 + 12.9;
+   document.write(num);
+
+    document.write("<br>");
+
+    let bool = 3 > 20;
+    document.write(bool);
+    document.write("<br>");
+
+    let abc1;
+    let type = typeof string;
+
+
+    document.write("<br>");
+    abx = "HEllo"
+    document.write(abx.includes('ll'));
+
+    let students = [
+      "fdsfds",
+      "fsdfdf",
+      "sdsdas",
+      2,
+      "dsadsad",
+      ["dsadsad"]
+    ];
+
+    document.write(students);
+
+    students.push("hello world");
+
+    students[10] = "dsdasdasd"
+
+    students.unshift("??");
+        document.write("<br>");
+
+    document.write(students);
+
+    document.write("<br>");
+    document.write(students.indexOf("hello world"));
+
+
+
+    let obj = {
+      name: "ahmad asli pasha",
+      fathername: "sdsdsd",
+      age: 23,
+
+ address: {
+   city: 'lahire',
+    country: 'pakistan',
+    street: "sdadsa",
+    house_number: 2
+ }
+    }
+
+    document.write(JSON.stringify(obj))
+
+
+
+    let questions = [
+        {
+            question: "What is your name?",
+            options: ["ahmad", "ali", "pasha", "asli"],
+            answer: "ahmad"
+        },
+        {
+            question: "What is your father name?",
+            options: ["ahmad", "ali", "pasha", "asli"],
+            answer: "ahmad"
+        },
+        {
+            question: "What is your age?",
+            options: ["ahmad", "ali", "pasha", "asli"],
+            answer: "ahmad"
+        }
+    ]
+  </script>
+
+</body>
+
+</html>

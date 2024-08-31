@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Recap - Variables, Conditions, Operators, Loops</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        h1 {
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 10px;
+        }
+        h2 {
+            margin-top: 30px;
+        }
+        pre {
+            background-color: #ecf0f1;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+            background-color: #ecf0f1;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        .note {
+            background-color: #dff9fb;
+            padding: 10px;
+            border-left: 4px solid #22a6b3;
+            margin-bottom: 20px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript Recap - Variables, Conditions, Operators, Loops</h1>
+
+    <section>
+        <h2>1. Variables</h2>
+        <p><strong>Definition:</strong> Variables store data that can be used and modified throughout your program.</p>
+        <p><strong>Types of Variables:</strong></p>
+        <ul>
+            <li><code>var</code> - Function-scoped or globally-scoped, can be redeclared and updated.</li>
+            <li><code>let</code> - Block-scoped, can be updated but not redeclared in the same scope.</li>
+            <li><code>const</code> - Block-scoped, cannot be updated or redeclared.</li>
+        </ul>
+        <p><strong>Example:</strong></p>
+        <pre><code>var age = 25;
+let name = "Alice";
+const birthYear = 1995;</code></pre>
+        <p class="note">Remember: Use <code>let</code> and <code>const</code> instead of <code>var</code> to avoid scope-related issues.</p>
+    </section>
+
+    <section>
+        <h2>2. Operators</h2>
+        <p><strong>Definition:</strong> Operators are used to perform operations on variables and values.</p>
+        <p><strong>Types of Operators:</strong></p>
+        <ul>
+            <li><strong>Arithmetic Operators:</strong> <code>+ - * / %</code> (e.g., <code>5 + 3</code> returns <code>8</code>)</li>
+            <li><strong>Assignment Operators:</strong> <code>= += -= *= /=</code> (e.g., <code>x += 5</code> is shorthand for <code>x = x + 5</code>)</li>
+            <li><strong>Comparison Operators:</strong> <code>== != === !== > < >= <=</code> (e.g., <code>5 == "5"</code> returns <code>true</code>, but <code>5 === "5"</code> returns <code>false</code>)</li>
+            <li><strong>Logical Operators:</strong> <code>&& || !</code> (e.g., <code>true && false</code> returns <code>false</code>)</li>
+        </ul>
+        <p><strong>Example:</strong></p>
+        <pre><code>let x = 10;
+let y = 5;
+console.log(x + y);  // Outputs: 15
+console.log(x > y);  // Outputs: true</code></pre>
+    </section>
+
+    <section>
+        <h2>3. Conditional Statements</h2>
+        <p><strong>Definition:</strong> Conditional statements allow you to perform different actions based on different conditions.</p>
+        <p><strong>Types:</strong></p>
+        <ul>
+            <li><code>if</code> statement</li>
+            <li><code>if...else</code> statement</li>
+            <li><code>else if</code> ladder</li>
+            <li><code>switch</code> statement</li>
+        </ul>
+        <p><strong>Example of <code>if...else</code>:</strong></p>
+        <pre><code>let age = 18;
+
+if (age >= 18) {
+    console.log("You are an adult.");
+} else {
+    console.log("You are a minor.");
+}</code></pre>
+        <p><strong>Example of <code>switch</code>:</strong></p>
+        <pre><code>let day = 2;
+
+switch (day) {
+    case 1:
+        console.log("Monday");
+        break;
+    case 2:
+        console.log("Tuesday");
+        break;
+    default:
+        console.log("Other day");
+}</code></pre>
+    </section>
+
+    <section>
+        <h2>4. Loops</h2>
+        <p><strong>Definition:</strong> Loops allow you to run the same code multiple times with different values.</p>
+        <p><strong>Types of Loops:</strong></p>
+        <ul>
+            <li><code>for</code> loop</li>
+            <li><code>while</code> loop</li>
+            <li><code>do...while</code> loop</li>
+            <li><code>for...of</code> and <code>for...in</code> loops</li>
+        </ul>
+        <p><strong>Example of <code>for</code> loop:</strong></p>
+        <pre><code>for (let i = 0; i < 5; i++) {
+    console.log(i);
+}
+// Outputs: 0 1 2 3 4</code></pre>
+        <p><strong>Example of <code>while</code> loop:</strong></p>
+        <pre><code>let i = 0;
+
+while (i < 5) {
+    console.log(i);
+    i++;
+}
+// Outputs: 0 1 2 3 4</code></pre>
+        <p class="note">Use <code>for...in</code> for looping over object properties and <code>for...of</code> for looping over iterable objects like arrays.</p>
+    </section>
+
+</body>
+</html>
