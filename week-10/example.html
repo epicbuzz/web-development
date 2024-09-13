@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Recursive Drawings</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        h2 {
+            margin-top: 40px;
+        }
+        canvas {
+            border: 1px solid #000;
+            margin-top: 20px;
+            display: block;
+        }
+        .canvas-container {
+            margin-bottom: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Recursive Canvas Drawings</h1>
+
+    <div class="canvas-container">
+        <h2>Example 1: Recursive Squares</h2>
+        <canvas id="canvas1" width="300" height="300"></canvas>
+    </div>
+
+    <div class="canvas-container">
+        <h2>Example 2: Recursive Tree</h2>
+        <canvas id="canvas2" width="300" height="300"></canvas>
+    </div>
+
+    <div class="canvas-container">
+        <h2>Example 3: Fractal Triangle</h2>
+        <canvas id="canvas3" width="300" height="300"></canvas>
+    </div>
+
+    <div class="canvas-container">
+        <h2>Example 4: Spiral Pattern</h2>
+        <canvas id="canvas4" width="300" height="300"></canvas>
+    </div>
+
+    <div class="canvas-container">
+        <h2>Example 5: Snowflake Pattern</h2>
+        <canvas id="canvas5" width="300" height="300"></canvas>
+    </div>
+
+    <script>
+
+const brightColors = [
+    "#7DF9FF", // Electric Blue
+    "#39FF14", // Neon Green
+    "#FF69B4", // Hot Pink
+    "#FF6700", // Bright Orange
+    "#9F00FF", // Vivid Violet
+    "#00FFFF", // Aqua
+    "#FF0000", // Bright Red
+    "#40E0D0", // Turquoise
+    "#FF00FF"  // Magenta
+];
+
+function getRandomColor() {
+    const randomIndex = Math.floor(Math.random() * brightColors.length);
+    return brightColors[randomIndex];
+}
+
+        // Example 1: Recursive Squares
+        const canvas1 = document.getElementById('canvas1');
+        const ctx1 = canvas1.getContext('2d');
+
+        const drawLeave = (x, y, ctx) => {
+            ctx.strokeStyle = getRandomColor();
+            ctx.lineWidth = 1;
+
+            ctx.beginPath();
+            ctx.arc(x, y, 2, 0, Math.PI * 2);
+            ctx.stroke();
+        }
+
+        function drawSquare(x, y, size) {
+            if (size < 5) return;
+
+            ctx1.strokeRect(x, y, size, size);
+
+            // Draw smaller squares inside
+            drawSquare(x + size * 0.1, y + size * 0.1, size * 0.8);
+        }
+
+        ctx1.strokeStyle = '#000';
+        drawSquare(50, 50, 200);
+
+        // Example 2: Recursive Tree
+        const canvas2 = document.getElementById('canvas2');
+        const ctx2 = canvas2.getContext('2d');
+
+        function drawBranch(x, y, length, angle, width) {
+            console.log("drawBranch at", x, y, " with length ", length, "and angle ", angle, " width", width);
+            if (length < 5) {
+               drawLeave(x, y, ctx2);
+                return;
+            };
+
+            ctx2.strokeStyle = '#000';
+            ctx2.lineWidth = width;
+            ctx2.beginPath();
+            ctx2.moveTo(x, y);
+
+            const xEnd = x + length * Math.cos(angle);
+            const yEnd = y + length * Math.sin(angle);
+
+            ctx2.lineTo(xEnd, yEnd);
+            ctx2.stroke();
+
+            // Draw smaller branches
+            drawBranch(xEnd, yEnd, length * 0.7, angle - Math.PI / 6, width * 0.7);//left branch
+            drawBranch(xEnd, yEnd, length * 0.7, angle + Math.PI / 6, width * 0.7); // right branch
+        }
+
+        drawBranch(150, 300, 80, -Math.PI / 2, 10);
+
+        // Example 3: Fractal Triangle
+        const canvas3 = document.getElementById('canvas3');
+        const ctx3 = canvas3.getContext('2d');
+
+        function drawTriangle(x, y, size) {
+            if (size < 5) return;
+
+            ctx3.beginPath();
+            ctx3.moveTo(x, y);
+            ctx3.lineTo(x + size, y);
+            ctx3.lineTo(x + size / 2, y - size * Math.sin(Math.PI / 3));
+            ctx3.closePath();
+            ctx3.stroke();
+
+            // Draw smaller triangles
+            drawTriangle(x, y, size / 2);
+            drawTriangle(x + size / 2, y, size / 2);
+            drawTriangle(x + size / 4, y - size / 2 * Math.sin(Math.PI / 3), size / 2);
+        }
+
+        ctx3.strokeStyle = '#000';
+        drawTriangle(50, 250, 200);
+
+        // Example 4: Spiral Pattern
+        const canvas4 = document.getElementById('canvas4');
+        const ctx4 = canvas4.getContext('2d');
+
+        function drawSpiral(x, y, angle, length) {
+            if (length < 5) return;
+
+            const xEnd = x + length * Math.cos(angle);
+            const yEnd = y + length * Math.sin(angle);
+
+            ctx4.beginPath();
+            ctx4.moveTo(x, y);
+            ctx4.lineTo(xEnd, yEnd);
+            ctx4.stroke();
+
+            drawSpiral(xEnd, yEnd, angle + Math.PI / 6, length * 0.9);
+        }
+
+        ctx4.strokeStyle = '#000';
+        drawSpiral(150, 150, 0, 100);
+
+        // Example 5: Snowflake Pattern
+        const canvas5 = document.getElementById('canvas5');
+        const ctx5 = canvas5.getContext('2d');
+
+        function drawSnowflake(x, y, length, depth) {
+            if (depth === 0) return;
+
+            ctx5.beginPath();
+            ctx5.moveTo(x - length / 2, y);
+            ctx5.lineTo(x + length / 2, y);
+            ctx5.stroke();
+
+            const newLength = length / 3;
+            const newDepth = depth - 1;
+
+            drawSnowflake(x - length / 3, y - newLength, newLength, newDepth);
+            drawSnowflake(x + length / 3, y - newLength, newLength, newDepth);
+            drawSnowflake(x, y + newLength, newLength, newDepth);
+        }
+
+        ctx5.strokeStyle = '#000';
+        drawSnowflake(150, 150, 120, 4);
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+Recursive functions
+
+
+const callMe = (i) => {
+    console.log("hello", i)
+i+=1;
+   callMe(i)
+}
+
+callMe(0);
+
+for(var i =0; i< 100    ; i++    ){
+  console.log("hello", i)
+}
+
+[
+callMe,2
+callMe, 1
+callMe, 0
+]
+
+
+0! = 1
+1! = 1
+
+5! = 5 x 4(5-1) x 3(4-1)
+
+x! = x * x - 1
+
+
+50
+
+const fib = (b) 
