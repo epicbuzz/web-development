@@ -1,12 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="shortcut icon" href="./resources/images/favicon_io/site.webmanifest" type="image/x-icon">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="./resources/css/styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Web Development</title>
 </head>
+<style>
+
+
+  .class-box{
+    width: 18rem;
+    align-self: normal;
+
+  }
+
+  .class-box a{
+    margin-top: auto;
+  }
+</style>
 <body>
   <header class="d-flex align-items-center border-primary bg-primary">
     <div class="logo-wrapper ms-3">
@@ -17,79 +32,24 @@
     </div>
   </header>
   <div class="container">
-    <script>
-        const weeksCount = 10;
-    </script>
-
-<ul  class="d-flex align-items-center justify-content-between flex-wrap gap-3 mt-4">
-  <li class="list-group-item">
-    <a href="week-1/intro.html">
-      <button type="button" class="btn btn-outline-primary">Week 1</button>
-    </a>
-  </li>
-
-  <li class="list-group-item">
-    <a href="week-2/ludo.html">
-      <button type="button" class="btn btn-outline-primary">Week 2</button>
-    </a>
-  </li>
-  <li class="list-group-item">
-    <a href="week-3/form.html">
-      <button type="button" class="btn btn-outline-primary">Week 3</button>
-    </a>
-  </li>
-
-  <li class="list-group-item">
-    <a href="week-4/index.html">
-      <button type="button" class="btn btn-outline-primary">Week 4</button>
-    </a>
-  </li>
-
-  <li class="list-group-item">
-    <a href="week-5/index.html">
-      <button type="button" class="btn btn-outline-primary">Week 5</button>
-    </a>
-  </li>
-
-  <li class="list-group-item">
-    <a href="week-6/index.html">
-      <button type="button" class="btn btn-outline-primary">Week 6</button>
-    </a>
-  </li>
-
-  <li class="list-group-item">
-    <a href="week-7/index.html">
-      <button type="button" class="btn btn-outline-primary">Week 7</button>
-    </a>
-  </li>
-
-  <li class="list-group-item">
-    <a href="week-8/index.html">
-      <button type="button" class="btn btn-outline-primary">Week 8</button>
-    </a>
-  </li>
-
-  <li class="list-group-item">
-    <a href="week-9/index.html">
-      <button type="button" class="btn btn-outline-primary">Week 9</button>
-    </a>
-  </li>
+    <div id="classList"></div>
+  </div>
 
 
-  <li class="list-group-item">
-    <a href="week-10/index.html">
-      <button type="button" class="btn btn-outline-primary">Week 10</button>
-    </a>
-  </li>
+  <template id="classtemplate">
+    <div class="card">
+     <div class="card-title">
+       <h2> {{heading}}</h2>
+     </div>
 
-  <li class="list-group-item">
-    <a href="week-11/index.html">
-      <button type="button" class="btn btn-outline-primary">Week 11</button>
-    </a>
-  </li>
-</li>
-</ul>
-</div>
+     <div class="card-body">
 
+     </div>
+
+     <div class="card-footer">
+     </div>
+    </div>
+  </template>
+  <script src="./resources/js/script.js"></script>
 </body>
 </html>
