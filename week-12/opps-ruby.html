@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OOP in Ruby</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 20px;
+    }
+    h1, h2 {
+      color: #333;
+    }
+    code {
+      background-color: #f4f4f4;
+      padding: 3px 5px;
+      border-radius: 5px;
+      display: inline-block;
+    }
+    pre {
+      background-color: #f4f4f4;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Object-Oriented Programming (OOP) in Ruby</h1>
+  <p>Ruby is a pure Object-Oriented language where everything, including primitive data types, is an object. OOP in Ruby is centered around four key principles: <strong>Encapsulation</strong>, <strong>Abstraction</strong>, <strong>Inheritance</strong>, and <strong>Polymorphism</strong>. Ruby's object-oriented features are built around <strong>classes</strong>, <strong>methods</strong>, and <strong>instances</strong>.</p>
+
+  <h2>1. Classes in Ruby</h2>
+  <p>A <strong>class</strong> is a blueprint for creating objects (instances). It defines attributes (variables) and behaviors (methods) that the objects instantiated from the class will have.</p>
+
+  <h3>Defining a Class</h3>
+  <pre><code>class Animal
+  def initialize(name)
+    @name = name  # @name is an instance variable
+  end
+
+  def speak
+    puts "#{@name} makes a sound"
+  end
+end
+
+# Creating an instance
+dog = Animal.new("Dog")
+dog.speak  # Output: "Dog makes a sound"</code></pre>
+
+  <ul>
+    <li><strong>initialize method:</strong> A constructor method called when a new object is created.</li>
+    <li><strong>Instance variables:</strong> Begin with <code>@</code> and are used to hold object-specific data.</li>
+  </ul>
+
+  <h2>2. Inheritance</h2>
+  <p><strong>Inheritance</strong> is a way to create a new class (subclass) that inherits properties and methods from an existing class (superclass). It promotes code reuse.</p>
+
+  <h3>Example of Inheritance</h3>
+  <pre><code>class Dog < Animal
+  def speak
+    puts "#{@name} barks"
+  end
+end
+
+dog = Dog.new("Bulldog")
+dog.speak  # Output: "Bulldog barks"</code></pre>
+
+  <p>The <code>Dog</code> class inherits from <code>Animal</code>, but overrides the <code>speak</code> method.</p>
+
+  <h2>3. Encapsulation</h2>
+  <p><strong>Encapsulation</strong> is the bundling of data (variables) and methods (functions) that operate on the data within a class, restricting direct access to some components. Ruby provides <strong>access control</strong> with methods:</p>
+  <ul>
+    <li><strong>Public</strong> (default): Methods accessible from outside the object.</li>
+    <li><strong>Private:</strong> Methods that can only be called from within the object.</li>
+    <li><strong>Protected:</strong> Methods that can be called by the object and its descendants.</li>
+  </ul>
+
+  <h3>Example of Encapsulation</h3>
+  <pre><code>class Person
+  def initialize(name, age)
+    @name = name
+    @age = age
+  end
+
+  def display
+    puts "#{@name} is #{@age} years old"
+  end
+
+  private
+  def secret_identity
+    puts "Secret identity"
+  end
+end
+
+person = Person.new("John", 30)
+person.display  # Output: "John is 30 years old"
+person.secret_identity  # Error: private method `secret_identity' called</code></pre>
+
+  <h2>4. Polymorphism</h2>
+  <p><strong>Polymorphism</strong> allows different classes to define methods with the same name but different implementations. Ruby supports polymorphism mainly through <strong>method overriding</strong> and <strong>duck typing</strong>.</p>
+
+  <h3>Method Overriding</h3>
+  <pre><code>class Animal
+  def speak
+    puts "Animal speaks"
+  end
+end
+
+class Dog < Animal
+  def speak
+    puts "Dog barks"
+  end
+end
+
+animal = Animal.new
+animal.speak  # Output: "Animal speaks"
+
+dog = Dog.new
+dog.speak  # Output: "Dog barks"</code></pre>
+
+  <h3>Duck Typing</h3>
+  <pre><code>def make_it_speak(animal)
+  animal.speak
+end
+
+class Cat
+  def speak
+    puts "Cat meows"
+  end
+end
+
+make_it_speak(Cat.new)  # Output: "Cat meows"</code></pre>
+
+  <h2>5. Composition</h2>
+  <p><strong>Composition</strong> refers to combining multiple objects or classes to achieve a specific functionality. Instead of inheriting behaviors, one object can contain other objects to perform a task.</p>
+
+  <h3>Example of Composition</h3>
+  <pre><code>class Engine
+  def start
+    puts "Engine is running"
+  end
+end
+
+class Car
+  def initialize
+    @engine = Engine.new  # Car has an Engine
+  end
+
+  def start
+    @engine.start  # Delegation to the Engine object
+  end
+end
+
+car = Car.new
+car.start  # Output: "Engine is running"</code></pre>
+
+  <h2>6. Modules and Mixins</h2>
+  <p>In Ruby, <strong>modules</strong> are a way to share reusable code between classes without using inheritance. Modules can't be instantiated but can be <strong>mixed in</strong> using the <code>include</code> or <code>extend</code> keywords.</p>
+
+  <h3>Example of Module Mixin</h3>
+  <pre><code>module Drivable
+  def drive
+    puts "Driving the vehicle"
+  end
+end
+
+class Car
+  include Drivable
+end
+
+car = Car.new
+car.drive  # Output: "Driving the vehicle"</code></pre>
+
+  <h2>Summary of Key OOP Concepts in Ruby</h2>
+  <ul>
+    <li><strong>Class</strong>: Blueprint for creating objects.</li>
+    <li><strong>Object</strong>: Instance of a class.</li>
+    <li><strong>Inheritance</strong>: Mechanism for creating a new class from an existing class.</li>
+    <li><strong>Encapsulation</strong>: Restricting access to internal object data and methods.</li>
+    <li><strong>Polymorphism</strong>: Ability to use the same method name with different implementations across classes.</li>
+    <li><strong>Composition</strong>: Objects containing other objects to perform a task, an alternative to inheritance.</li>
+    <li><strong>Modules and Mixins</strong>: Reusable code shared among classes without inheritance.</li>
+  </ul>
+
+</body>
+</html>

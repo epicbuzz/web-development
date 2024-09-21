@@ -1,0 +1,2 @@
+- implement a function to swap two values
+- Extract classes we'll need to implement a school management system

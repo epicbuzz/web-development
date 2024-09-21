@@ -1,0 +1,84 @@
+OOP
+
+class Cat < Animal
+  def sound
+     "Miaoon and parent sound is #{super}"
+  end
+end
+
+
+class Cow < Animal
+ def sound
+     "Baaan"
+  end
+end
+
+class Animal
+  attr_accessor :name
+
+  def initialize(name)
+    @name = name
+  end
+
+  def speak
+    puts "#{@name} makes a sound like #{sound}"
+  end
+
+  protected
+  def sound
+     "???"
+  end
+end
+
+class Animal
+  constructor(name){
+    this.name = name
+  }
+
+  getName(){
+    return this.name
+  }
+
+  speak(){
+    console.log(`${@name} makes a sound`)
+  }
+end
+
+
+cat = Animal.new("cat")
+cat.name
+
+
+
+class Person
+  # attr_accessor, attr_getter, attr_setter 
+
+  attr_accessor :first_name, :last_name, :name 
+
+  def initialize(f_name, l_name)
+    @first_name = f_name
+    @last_name = l_name
+    @name = "#{f_name} #{l_name}"
+  end 
+
+  def first_name=(first_name)
+    @first_name = first_name
+  end 
+
+
+  def name=(val)
+    @first_name, @last_name = val.split(' ')
+    @name = val
+  end 
+
+  def set_name=(val)
+     @first_name, @last_name = val.split(' ')
+    @name = val
+  end 
+end  
+
+
+p = Person.new "dsd", "sdsd"
+
+p.first_name 
+p.name = "rana ahmad" 

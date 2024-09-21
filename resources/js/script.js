@@ -1,5 +1,5 @@
 let classList = document.getElementById("classList");
-const weekCount = 10;
+const weekCount = 12;
 
 classList.classList.add("d-flex" ,"align-items-center", "flex-wrap" ,"gap-3" ,"my-5")
 
