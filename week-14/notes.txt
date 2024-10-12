@@ -1,0 +1,51 @@
+Rails is MVC framework
+
+M: Modal - AR
+V: Views - ERB
+
+C: Controller
+
+
+Install ruby and create gemset
+
+rvm install 3.1.0
+rvm use 3.1.0
+
+
+rvm gemset create course
+
+rvm gemset use course
+
+install the gems
+bundle
+
+Run the server
+
+rails s / rails server
+
+Generate resources
+Author name
+Book(name, cover, price, description, author_id)
+
+
+
+rails generate scaffold Author name:string info:text contact
+ rails db:migrate
+
+ rails c / rails console
+
+
+ Routes:
+ create /authors POST
+ update /authors/:id PATCH/PUT
+ index /authors GET
+ edit /authors/:id/edit
+ new /authros/new
+
+f = Author.first
+
+f.methods.select do |s| s.to_s.include? 'save' end
+
+rails generate scaffold book name:string price:float description:text author:belongs_to
+
+bin/rails active_storage:install

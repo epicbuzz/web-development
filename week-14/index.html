@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecture Notes: Active Record and Scaffold</title>
+</head>
+<body>
+    <a href="https://guides.rubyonrails.org/">Rails guides</a>
+
+    <a href="https://guides.rubyonrails.org/active_record_basics.html">
+      Active records basics
+    </a>
+
+    <h1>Lecture Notes: Active Record and Scaffold</h1>
+
+    <h2>Active Record in Rails</h2>
+    <p>
+        Active Record is the Object-Relational Mapping (ORM) framework used by Ruby on Rails. It allows Rails developers to interact with database records as though they are Ruby objects, making database manipulation easier and more intuitive. Active Record follows the Active Record Design Pattern, which is responsible for representing models and their relationships in a database.
+    </p>
+
+    <h3>Core Concepts of Active Record</h3>
+
+    <ul>
+        <li>
+            <strong>Model:</strong> A model represents a table in the database. For example, a <code>Post</code> model will map to a <code>posts</code> table in the database.
+        </li>
+        <li>
+            <strong>Attributes:</strong> Attributes represent columns in the database table. A <code>Post</code> might have attributes like <code>title</code> and <code>content</code>.
+        </li>
+        <li>
+            <strong>Associations:</strong> Active Record supports associations between models, such as <code>has_many</code>, <code>belongs_to</code>, and <code>has_one</code>. These associations allow models to interact with each other in more complex ways.
+        </li>
+        <li>
+            <strong>Validations:</strong> Active Record allows you to validate the data before saving it to the database. For example, you can ensure that certain fields are present or that they are unique.
+        </li>
+        <li>
+            <strong>Migrations:</strong> Migrations allow developers to change the database schema over time, adding or removing columns, creating tables, etc.
+        </li>
+    </ul>
+
+    <h3>Example: Creating a Model</h3>
+
+    <pre><code>rails generate model Post title:string content:text</code></pre>
+
+    <p>
+        This command generates a <code>Post</code> model, along with a migration file that will create a table called <code>posts</code> with the attributes <code>title</code> (a string) and <code>content</code> (text).
+    </p>
+
+    <h3>CRUD Operations with Active Record</h3>
+    <p>
+        Active Record allows you to easily perform Create, Read, Update, and Delete (CRUD) operations on your models.
+    </p>
+
+    <ul>
+        <li><strong>Create:</strong></li>
+        <pre><code>post = Post.new(title: "My First Post", content: "This is the content.")
+post.save</code></pre>
+
+        <li><strong>Read:</strong></li>
+        <pre><code>post = Post.find(1)
+puts post.title  # Output: My First Post</code></pre>
+
+        <li><strong>Update:</strong></li>
+        <pre><code>post = Post.find(1)
+post.update(content: "Updated content")</code></pre>
+
+        <li><strong>Delete:</strong></li>
+        <pre><code>post = Post.find(1)
+post.destroy</code></pre>
+    </ul>
+
+    <h2>Scaffold in Rails</h2>
+    <p>
+        Scaffolding in Rails is a quick way to generate the basic code for a resource. It generates models, views, controllers, and even the routes required for a fully functioning CRUD interface. While scaffolding is helpful for rapid prototyping, it's not typically used in production applications due to the generic code it creates.
+    </p>
+
+    <h3>Generating a Scaffold</h3>
+    <p>To generate a scaffold, you use the following command:</p>
+
+    <pre><code>rails generate scaffold Post title:string content:text</code></pre>
+
+    <p>
+        This command generates:
+    </p>
+
+    <ul>
+        <li>A <strong>model</strong> for <code>Post</code>, representing the <code>posts</code> table.</li>
+        <li>A <strong>migration</strong> to create the <code>posts</code> table in the database.</li>
+        <li>A <strong>controller</strong> for handling CRUD operations, such as creating, showing, editing, and deleting posts.</li>
+        <li>Basic <strong>views</strong> for each action in the controller.</li>
+        <li>Routes in the <code>config/routes.rb</code> file to point to the controller actions.</li>
+    </ul>
+
+    <h3>Example: Scaffold Usage</h3>
+    <p>After generating the scaffold, you can migrate the database:</p>
+
+    <pre><code>rails db:migrate</code></pre>
+
+    <p>
+        Then, start the Rails server:
+    </p>
+
+    <pre><code>rails server</code></pre>
+
+    <p>
+        Open a browser and go to <code>http://localhost:3000/posts</code>, and you'll see a basic interface to create, view, edit, and delete posts.
+    </p>
+
+    <h3>Scaffold-generated Files</h3>
+
+    <ul>
+        <li><strong>Model:</strong> <code>app/models/post.rb</code></li>
+        <li><strong>Controller:</strong> <code>app/controllers/posts_controller.rb</code></li>
+        <li><strong>Views:</strong> <code>app/views/posts/</code></li>
+        <li><strong>Migration:</strong> <code>db/migrate/20240101000000_create_posts.rb</code></li>
+        <li><strong>Routes:</strong> <code>config/routes.rb</code> will include <code>resources :posts</code></li>
+    </ul>
+
+    <h2>Conclusion</h2>
+    <p>
+        Active Record provides a powerful way to interact with the database in Rails applications, offering features such as validations, associations, and CRUD operations. Scaffolding is a great way to quickly generate the structure for new resources, but for production apps, you may want to fine-tune the generated code.
+    </p>
+</body>
+</html>
