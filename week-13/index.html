@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL Queries: Database and Table Operations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        section {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>SQL Queries for Database and Table Operations</h1>
+
+    <section>
+        <h2>1. Creating a Database</h2>
+        <p>To create a database, you can use the following SQL query:</p>
+        <pre><code>
+CREATE DATABASE database_name;
+        </code></pre>
+        <p>Replace <code>database_name</code> with your desired database name.</p>
+    </section>
+
+    <section>
+        <h2>2. Creating a Table</h2>
+        <p>To create a table inside a database, you can use the following SQL query:</p>
+        <pre><code>
+CREATE TABLE table_name (
+    column1_name datatype(size),
+    column2_name datatype(size),
+    ...
+);
+        </code></pre>
+        <p>Example:</p>
+        <pre><code>
+CREATE TABLE employees (
+    id INT PRIMARY KEY,
+    name VARCHAR(100),
+    position VARCHAR(100),
+    salary DECIMAL(10, 2)
+);
+        </code></pre>
+    </section>
+
+    <section>
+        <h2>3. Inserting Data into a Table</h2>
+        <p>To insert data into a table, you can use the following SQL query:</p>
+        <pre><code>
+INSERT INTO table_name (column1, column2, column3, ...)
+VALUES (value1, value2, value3, ...);
+        </code></pre>
+        <p>Example:</p>
+        <pre><code>
+INSERT INTO employees (id, name, position, salary)
+VALUES (1, 'John Doe', 'Software Engineer', 75000);
+        </code></pre>
+    </section>
+
+    <section>
+        <h2>4. Deleting Data from a Table</h2>
+        <p>To delete data from a table, you can use the following SQL query:</p>
+        <pre><code>
+DELETE FROM table_name
+WHERE condition;
+        </code></pre>
+        <p>Example:</p>
+        <pre><code>
+DELETE FROM employees
+WHERE id = 1;
+        </code></pre>
+        <p>This will delete the row where the employee's <code>id</code> is 1.</p>
+    </section>
+
+    <section>
+        <h2>5. Updating Data in a Table</h2>
+        <p>To update existing data in a table, you can use the following SQL query:</p>
+        <pre><code>
+UPDATE table_name
+SET column1 = value1, column2 = value2, ...
+WHERE condition;
+        </code></pre>
+        <p>Example:</p>
+        <pre><code>
+UPDATE employees
+SET salary = 80000
+WHERE id = 1;
+        </code></pre>
+        <p>This updates the salary of the employee with <code>id</code> 1.</p>
+    </section>
+
+    <section>
+        <h2>6. Dropping a Table</h2>
+        <p>To drop (delete) a table from the database, you can use the following SQL query:</p>
+        <pre><code>
+DROP TABLE table_name;
+        </code></pre>
+        <p>Example:</p>
+        <pre><code>
+DROP TABLE employees;
+        </code></pre>
+        <p>This will remove the <code>employees</code> table and all its data from the database.</p>
+    </section>
+
+    <a href="./rails_example.html">Click here to see how to manage tables in Ruby on Rails</a>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rails Migration Examples for Product Model</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        section {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Rails Migration Examples for Product Model</h1>
+
+<section>
+    <h2>1. Creating the Products Table</h2>
+    <p>To create a <code>products</code> table, you can use the following Rails migration:</p>
+    <pre><code>
+class CreateProducts &lt; ActiveRecord::Migration[6.1]
+  def change
+    create_table :products do |t|
+      t.string :name
+      t.decimal :price, precision: 10, scale: 2
+      t.integer :quantity
+      t.string :category
+
+      t.timestamps
+    end
+  end
+end
+    </code></pre>
+</section>
+
+<section>
+    <h2>2. Inserting Data into the Products Table</h2>
+    <p>You can insert data using Rails seeds or the Rails console. Here's an example for <code>db/seeds.rb</code>:</p>
+    <pre><code>
+# db/seeds.rb
+Product.create(name: 'Laptop', price: 1000.50, quantity: 10, category: 'Electronics')
+Product.create(name: 'Phone', price: 500.99, quantity: 30, category: 'Electronics')
+    </code></pre>
+    <p>To load the seed data, run <code>rails db:seed</code>.</p>
+</section>
+
+<section>
+    <h2>3. Deleting Data from the Products Table</h2>
+    <p>You can delete data using the Rails console or controller. Here's an example:</p>
+    <pre><code>
+# Deleting a product with ID 1
+product = Product.find(1)
+product.destroy
+    </code></pre>
+    <p>Or, delete data based on conditions:</p>
+    <pre><code>
+# Deleting all products in a specific category
+Product.where(category: 'Electronics').destroy_all
+    </code></pre>
+</section>
+
+<section>
+    <h2>4. Updating Data in the Products Table</h2>
+    <p>You can update existing data using the <code>update</code> method:</p>
+    <pre><code>
+# Updating the price of a product with ID 1
+product = Product.find(1)
+product.update(price: 1200.75)
+    </code></pre>
+    <p>Alternatively, use an SQL query inside a migration:</p>
+    <pre><code>
+class UpdateProductPrice &lt; ActiveRecord::Migration[6.1]
+  def up
+    execute &lt;&lt;-SQL
+      UPDATE products
+      SET price = 1200.75
+      WHERE id = 1;
+    SQL
+  end
+end
+    </code></pre>
+</section>
+
+<section>
+    <h2>5. Dropping the Products Table</h2>
+    <p>If you want to drop the <code>products</code> table, use the following migration:</p>
+    <pre><code>
+class DropProducts &lt; ActiveRecord::Migration[6.1]
+  def change
+    drop_table :products
+  end
+end
+    </code></pre>
+</section>
+
+</body>
+</html>

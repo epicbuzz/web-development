@@ -1,0 +1,12 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Books</h1>
+
+<div id="books" class="d-flex gap-4 mb-3">
+  <% @books.each do |book| %>
+    <%= render book %>
+
+  <% end %>
+</div>
+
+<%= link_to "New book", new_book_path, class: 'btn btn-success' %>
